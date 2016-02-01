@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= partial 'partials/head' %>
+  </head>
+  <body>
+    <%= partial 'partials/header' %>
+
+    <%= partial 'partials/mobilenav' %>
+    <%= partial 'partials/widenav' %>
+
+    <%= yield %>
+
+    <%= partial 'partials/footer' %>
+  </body>
+  <%= javascript_include_tag :site %>
+</html>
