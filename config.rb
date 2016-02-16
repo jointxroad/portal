@@ -10,6 +10,7 @@ page '/*.xml', layout: false
 page '/*.json', layout: false
 page '/*.txt', layout: false
 
+
 set :markdown, :tables => true, :autolink => true, :gh_blockcode => true, :fenced_code_blocks => true, :with_toc_data => true
 set :markdown_engine, :redcarpet
 
@@ -21,6 +22,7 @@ activate :external_pipeline,
 
 # With alternative layout
 # page "/path/to/file.html", layout: :otherlayout
+page "/event/*", layout: :event_layout
 
 # Proxy pages (http://middlemanapp.com/basics/dynamic-pages/)
 # proxy "/this-page-has-no-template.html", "/template-file.html", locals: {
@@ -69,5 +71,11 @@ helpers do
     end
 
     link_to(caption, url, options)
+  end
+
+  def sub_pages(dir)
+    sitemap.resources.select do |resource|
+      resource.path.start_with?(dir)
+    end
   end
 end
