@@ -1,0 +1,11 @@
+<% wrap_layout :layout do %>
+  <main class="container">
+    <div class="row">
+      <div class="column column-75 main-content">
+        <p><strong><%= current_article.metadata[:page][:author] %></strong><br><small><%= current_article.date.strftime('%d.%m.%Y') %></small></p>
+        <%= yield %>
+      </div>
+      <%= partial "partials/sidebar" %>
+    </div>
+  </main>
+<% end %>

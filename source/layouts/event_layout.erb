@@ -1,0 +1,10 @@
+<% wrap_layout :layout do %>
+  <main class="container">
+    <div class="row">
+      <div class="column column-75 main-content">
+        <%= yield %>
+      </div>
+      <%= partial "partials/sidebar" %>
+    </div>
+  </main>
+<% end %>
