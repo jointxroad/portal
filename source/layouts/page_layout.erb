@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= partial 'partials/head' %>
+  </head>
+  <body>
+    <%= partial 'partials/mobilenav' %>
+    <%= partial 'partials/widenav', :locals => { nav_class: "sub" } %>
+
+    <main class="container">
+      <div class="row">
+        <aside class="column">
+          <ul class="read-more">
+            <li><a href="#overview">1. Overview</a></li>
+            <li><a href="#next-steps">2. Next steps</a></li>
+            <li><a href="#install-dependencies">3. Install dependencies</a></li>
+            <li><a href="#">4. Install environment</a></li>
+            <li><a href="#">5. Troubleshooting</a></li>
+            <li><a href="#">6. Now what?</a></li>
+          </ul>
+        </aside>
+        <div class="column column-75 main-content">
+          <%= yield %>
+        </div>
+      </div>
+    </main>
+
+    <%= partial 'partials/footer' %>
+  </body>
+  <%= javascript_include_tag :site %>
+</html>

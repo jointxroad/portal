@@ -4,10 +4,14 @@
     <%= partial 'partials/head' %>
   </head>
   <body>
+    <% if current_page.url == '/' %>
     <%= partial 'partials/header' %>
+    <% end %>
 
     <%= partial 'partials/mobilenav' %>
-    <%= partial 'partials/widenav' %>
+    <% nav_class = current_page.url != '/' ? 'sub' : '' %>
+    <%= partial 'partials/widenav', :locals => { nav_class: nav_class } %>
+
 
     <%= yield %>
 

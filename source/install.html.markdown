@@ -1,39 +1,52 @@
-<main class="container">
-  <div class="row">
-    <aside class="column">
-      <ul class="read-more">
-        <li><a href="#start">1. Start</a></li>
-        <li><a href="#next-steps">2. Next steps</a></li>
-        <li><a href="#install-dependencies">3. Install dependencies</a></li>
-        <li><a href="#">4. Install environment</a></li>
-        <li><a href="#">5. Troubleshooting</a></li>
-        <li><a href="#">6. Now what?</a></li>
-      </ul>
-    </aside>
-    <div class="column column-75 main-content">
-      <h1>Installation</h1>
-      <h4>A simple yet effective guide to installation ABC and B-Z.</h4>
-      <h3 id="start">Start</h3>
-      <p>A prominent voice in the Bitcoin community has announced that he is abandoning the cryptocurrency that he helped to popularize. Mike Hearn has revealed that deep divisions within the platform's "leadership" and a looming technical apocalypse threatens the system's entire existence. The creator of bitcoinJ has explained his position in a lengthy Medium post, saying that he has sold his coins and is washing his hands of Bitcoin. As far as he is concerned, the "Bitcoin experiment" has "failed."</p>
-      <pre><code>.mystyle {
-color: #9b4dca;
-}</code></pre>
-      <h3 id="next-steps">Next steps</h3>
-      <p>There are several reasons behind his departure, but the most notable is that senior figures in the community are ignoring a key flaw in the software. In Hearn's mind, "the block chain [sic] is full," after an upper limit of 1MB per block was imposed on the system to keep traffic flowing smoothly. Unfortunately, this "temporary kludge," which was added years ago, by Satoshi Nakamoto, has not been removed, thanks to resistance from a group of vested interests. Hearn points a finger to a handful of miners who stand to lose substantial amounts of money if the issue was fixed properly.</p>
-      <h3 id="install-dependencies">Install dependencies</h3>
-      <pre><code>user=> (re-seq #"[0-9]+" "abs123def345ghi567")
-("123" "345" "567")
-user=> (re-find #"([-+]?[0-9]+)/([0-9]+)" "22/7")
-["22/7" "22" "7"]
-user=> (let [[a b c] (re-matches #"([-+]?[0-9]+)/([0-9]+)" "22/7")]
-     [a b c])
-["22/7" "22" "7"]
-user=> (re-seq #"(?i)[fq].." "foo bar BAZ QUX quux")
-("foo" "QUX" "quu")</code></pre>
-      <p>A prominent voice in the Bitcoin community has announced that he is abandoning the cryptocurrency that he helped to popularize. Mike Hearn has revealed that deep divisions within the platform's "leadership" and a looming technical apocalypse threatens the system's entire existence. The creator of bitcoinJ has explained his position in a lengthy Medium post, saying that he has sold his coins and is washing his hands of Bitcoin. As far as he is concerned, the "Bitcoin experiment" has "failed."</p>
-      <blockquote>Joint X-road Community FTW!</blockquote>
-      <p>There are several reasons behind his departure, but the most notable is that senior figures in the community are ignoring a key flaw in the software. In Hearn's mind, "the block chain [sic] is full," after an upper limit of 1MB per block was imposed on the system to keep traffic flowing smoothly. Unfortunately, this "temporary kludge," which was added years ago, by Satoshi Nakamoto, has not been removed, thanks to resistance from a group of vested interests. Hearn points a finger to a handful of miners who stand to lose substantial amounts of money if the issue was fixed properly.</p><img src="http://lorempixel.com/800/400/technics">
-      <p>There are several reasons behind his departure, but the most notable is that senior figures in the community are ignoring a key flaw in the software. In Hearn's mind, "the block chain [sic] is full," after an upper limit of 1MB per block was imposed on the system to keep traffic flowing smoothly. Unfortunately, this "temporary kludge," which was added years ago, by Satoshi Nakamoto, has not been removed, thanks to resistance from a group of vested interests. Hearn points a finger to a handful of miners who stand to lose substantial amounts of money if the issue was fixed properly.</p>
-    </div>
-  </div>
-</main>
+Installation
+============
+## <a name="overview"></a>Overview
+Overall view of X-Road system and components
+![](/images/xroad_overview.jpg)
+
+#### Clients
+Client can be service consumer or service provider.
+
+Service consumer is an institution or organization that uses services provided by service providers.
+
+Service provider is a database/information system that is providing predefined web services through
+x-road infrastructure
+
+#### Security server
+Security Servers is a component of X-Road which should be installed, hosted, and managed in the service provider network. As an alternative, Security Server can be provided as a managed access service to X-Road.
+
+* Security Servers implement a security gateways for web-services. All web-service requests and responses are digitally signed, timestamped, encrypted and archived by security servers.
+* Security Servers implement organizational level access control for web-services.
+* Security Servers encapsulate all of the complexity of highly available PKI-based infrastructures and provide developers with transparently secured inter-organizational web services.
+* Security Servers provide meta-services for discovering the structure of the infrastructure, including organizations and services
+
+#### Central server / X-road centre
+X-Road Centre is an organization that creates and maintains an X-Road infrastructure instance and offers services to end-users
+
+* trusted third party services: certification of security servers, management of secure directory    infrastructure,
+* tamper-proof log service for security servers
+* monitoring service – health monitoring of security servers, provides warnings to system administrators in case of error conditions
+* e-service usage monitoring – for statistical purposes
+usage monitoring for detection of suspicious activities (such as unwarranted queries to collect confidential information)
+
+#### Certification Authority / PKI services
+Certification Authority offers standard certifications services:
+
+* Issues certificates for digital signature and for web servers
+* Offers certificate validity checking service using OCSP protocol
+* Offers time-stamping service using RFC 3161 protocol
+
+## <a name="install"></a>Security Server installation
+In order to join X-Road network as a service provider or/and client you need to
+install, host and manage security server. Follow country specific guidelines how to proceed
+with this installation.
+
+* [Joining X-tee v6 development environment (In Estonia)](https://www.ria.ee/ee/liitumine-xtee-arendus.html)
+* [Joining palveluväylä development environment (In Finland)](https://confluence.csc.fi/pages/viewpage.action?pageId=50177427)
+
+Once you've completed the installation you can hop onto [examples](examples) to
+see how to write client / provider component.
+
+### Documents and links
+* [Security Server user guide](https://confluence.csc.fi/download/attachments/47583200/x-road_v6_security_server_user_guide_2.pdf?version=1&modificationDate=1444021857473&api=v2)
+* [Security server installation using ansible tool into vagrant or ec2](https://github.com/kakoni/xroad_vagrant_ansible)

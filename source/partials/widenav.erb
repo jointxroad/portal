@@ -1,10 +1,10 @@
-<nav class="widenav">
+<nav class="widenav <%= locals.fetch :nav_class, '' %>">
   <ul>
-    <li class="action navlogo"><a href="/"><img src="/images/logo-black.svg"></a></li>
+    <li class="navlogo"><a href="/"><img src="/images/logo-black.svg"></a></li>
     <li><a href="/archive.html">BLOG<small>What's up</small></a></li>
-    <li><a href="">COMMUNITY<small>Connecting folks</small></a></li>
-    <li><a href="">EVENTS<small>Be there</small></a></li>
+    <li><a href="/community.html">COMMUNITY<small>Connecting folks</small></a></li>
+    <li><a href="/events.html">EVENTS<small>Be there</small></a></li>
     <li><a href="">CONTACT US<small>We're here to help</small></a></li>
-    <li class="action"><a href="install.html" class="button">Install </a></li>
+    <li class="action"><a href="/install.html" class="button">Install </a></li>
   </ul>
 </nav>
