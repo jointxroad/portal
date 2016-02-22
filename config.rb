@@ -48,7 +48,7 @@ configure :build do
   # Minify Javascript on build
   activate :minify_javascript
 
-  set :http_prefix, '/portal'
+  #set :http_prefix, '/portal'
 end
 
 activate :blog do |blog|
@@ -58,6 +58,9 @@ activate :blog do |blog|
 end
 
 activate :deploy do |deploy|
+  set :skip_build_clean do |path|
+    path =~ /\.git/
+  end
   deploy.build_before = true # runs build before deploying
   deploy.deploy_method = :git
   deploy.remote = 'pages'
