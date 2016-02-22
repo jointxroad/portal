@@ -5,4 +5,5 @@ Contact
 ============
 
 #### Community manager
-Karri Niemelä (karri.niemela at beans.fi) is the current community manager.
+If you need more information or have addiotional questions, please contact the community manager,
+Karri Niemelä (karri.niemela at beans.fi)

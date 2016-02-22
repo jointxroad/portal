@@ -60,7 +60,8 @@ end
 activate :deploy do |deploy|
   deploy.build_before = true # runs build before deploying
   deploy.deploy_method = :git
-  deploy.branch = 'gh-pages'
+  deploy.remote = 'pages'
+  deploy.branch = 'master'
 end
 
 helpers do
