@@ -1,6 +1,9 @@
+---
+layout: page_layout
+---
 Installation
 ============
-## <a name="overview"></a>Overview
+## Overview
 Overall view of X-Road system and components
 ![](/images/xroad_overview.jpg)
 
@@ -36,7 +39,7 @@ Certification Authority offers standard certifications services:
 * Offers certificate validity checking service using OCSP protocol
 * Offers time-stamping service using RFC 3161 protocol
 
-## <a name="install"></a>Security Server installation
+## Security Server installation
 In order to join X-Road network as a service provider or/and client you need to
 install, host and manage security server. Follow country specific guidelines how to proceed
 with this installation.
@@ -47,6 +50,6 @@ with this installation.
 Once you've completed the installation you can hop onto [examples](examples) to
 see how to write client / provider component.
 
-### Documents and links
+## Documents and links
 * [Security Server user guide](https://confluence.csc.fi/download/attachments/47583200/x-road_v6_security_server_user_guide_2.pdf?version=1&modificationDate=1444021857473&api=v2)
 * [Security server installation using ansible tool into vagrant or ec2](https://github.com/kakoni/xroad_vagrant_ansible)

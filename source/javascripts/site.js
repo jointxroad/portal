@@ -25,6 +25,8 @@
 	$('a[href^="#"]').click(function(e) {
 
 	    e.preventDefault();
+			console.log(this)
+			console.log(this.hash)
     	$('html,body').animate({ scrollTop: jQuery(this.hash).offset().top-50}, 700);
 	    return false;
 

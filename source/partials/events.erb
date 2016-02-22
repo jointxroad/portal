@@ -1,11 +1,10 @@
 <div class="column">
-  <h4><a href="archive.html">Events</a></h4>
-  <% sub_pages('event').each do |article| %>
-
-  <div onclick="document.location.href=&quot;<%= article.url %>&quot;" class="card">
-    <div class="card-header"><b><%= article.data.date %></b><small><%= article.data.location %></small></div>
+  <h4><a href="events.html">Events</a></h4>
+  <% data.events.each do |event| %>
+  <div onclick="document.location.href=&quot;<%= event.link %>&quot;" class="card">
+    <div class="card-header"><b><%= Date.parse(event.date).strftime('%d.%m.%Y') %></b><small><%= event.location %></small></div>
     <div class="card-content">
-      <p><%= article.data.title %></p><%= image_tag article.data.image %>
+      <p><%= event.title %></p><%= image_tag event.image %>
     </div>
   </div>
   <% end %>

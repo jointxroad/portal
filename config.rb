@@ -22,11 +22,6 @@ activate :external_pipeline,
 
 # With alternative layout
 # page "/path/to/file.html", layout: :otherlayout
-page "/event/*", layout: :event_layout
-page "/install.html", layout: :page_layout
-page "/community.html", layout: :full_page_layout
-
-
 
 # Proxy pages (http://middlemanapp.com/basics/dynamic-pages/)
 # proxy "/this-page-has-no-template.html", "/template-file.html", locals: {

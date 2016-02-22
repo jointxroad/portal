@@ -5,10 +5,10 @@
       <p><%= blog.articles[0].title %></p><%= image_tag blog.articles[0].data.image %>
     </div>
   </div>
-  <div onclick="document.location.href = &quot;<%= sub_pages('event')[0].url %>&quot;" class="card">
-    <div class="card-header"><b><%= sub_pages('event')[0].data.author %></b><small><%= sub_pages('event')[0].data.date %></small></div>
+  <div onclick="document.location.href = &quot;<%= data.events[0].link %>&quot;" class="card">
+    <div class="card-header"><b><%= data.events[0].location %></b><small><%= Date.parse(data.events[0].date).strftime('%d.%m.%Y') %></small></div>
     <div class="card-content">
-      <p><%= sub_pages('event')[0].data.title %></p><%= image_tag sub_pages('event')[0].data.image %>
+      <p><%= data.events[0].title %></p><%= image_tag data.events[0].image %>
     </div>
   </div>
 </div>

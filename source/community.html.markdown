@@ -1,3 +1,6 @@
+---
+layout: full_page_layout
+---
 Community
 ============
 
