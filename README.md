@@ -1,7 +1,7 @@
 Community Portal.
 ================
 
-Source files that power [X-Road community portal](http://jointxroad.github.io/portal).
+Source files that power [X-Road community portal](http://jointxroad.github.io/).
 Uses [Middleman](https://github.com/middleman/middleman)-powered static page generator.
 
 ## How to run the site locally
