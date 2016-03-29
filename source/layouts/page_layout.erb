@@ -11,9 +11,9 @@
       <div class="row">
         <aside class="column">
           <ul class="read-more">
-            <li><a href="#overview">1. Overview</a></li>
-            <li><a href="#security-server-installation">2. Security Server Installation</a></li>
-            <li><a href="#documents-and-links">3. Documentation and links</a></li>
+            <% current_page.data.sidebar.each_with_index do |link, index| %>
+            <li><%= link_to "#{index+1}. #{link.text}", link.href %></li>
+            <% end %>
           </ul>
         </aside>
         <div class="column column-75 main-content">

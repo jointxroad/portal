@@ -1,5 +1,12 @@
 ---
 layout: page_layout
+sidebar:
+  - href: "#overview"
+    text: Overview
+  - href: "#security-server-installation"
+    text: Security Server Installation
+  - href: "#documents-and-links"
+    text: Documentation and links
 ---
 Installation
 ============

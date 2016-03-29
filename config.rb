@@ -57,16 +57,6 @@ activate :blog do |blog|
   blog.layout = "blog_layout"
 end
 
-activate :deploy do |deploy|
-  set :skip_build_clean do |path|
-    path =~ /\.git/
-  end
-  deploy.build_before = true # runs build before deploying
-  deploy.deploy_method = :git
-  deploy.remote = 'pages'
-  deploy.branch = 'master'
-end
-
 helpers do
   def active_link_to(caption, url, options = {})
     if current_page.url == "#{url}/"

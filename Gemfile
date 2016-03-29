@@ -9,7 +9,8 @@ gem 'tzinfo-data', platforms: [:mswin, :mingw, :jruby]
 # Middleman Gems
 gem 'middleman', '>= 4.1.1'
 gem 'middleman-livereload'
-gem 'middleman-deploy', '>= 2.0.0-alpha'
+#gem 'middleman-deploy', '>= 2.0.0-alpha'
+gem 'middleman-gh-pages', '>= 0.3.0'
 gem 'middleman-blog', github: 'middleman/middleman-blog'
 
 # Templating Engines

@@ -11,7 +11,7 @@ Then run `bundle exec middleman server` to start the server at `http://localhost
 
 ## How to deploy to gh-pages
 
-Middleman is configured with deploy module. Execute `bundle exec middleman deploy` to generate
+Middleman is configured with deploy module. Execute `bundle exec rake publish REMOTE_NAME=pages ALLOW_DIRTY=true BRANCH_NAME=master` to generate
 /push site to gh-pages.
 
 
