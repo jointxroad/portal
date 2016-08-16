@@ -4,7 +4,7 @@ sidebar:
   - href: "#general"
     text: General
   - href: "#java"
-    text: Pabui
+    text: Java
   - href: "#javascript"
     text: Javascript
 ---
@@ -18,6 +18,66 @@ X-road uses SOAP version 1.1 messaging. When calling a service you need to make 
 To get quickly started with development/testing you don't need to have full security server installation. Instead you can just run [X-Road Test Service](https://github.com/petkivim/x-road-test-service) locally and try your client code against it.
 
 ## JAVA
+### wsimport
+You need to manually insert SOAP headers into your client code. Below is an example how to use these headers and call getRandom method on testservice (using generated classes)
+
+```java
+TestService service = new TestService();
+TestServicePortType port = service.getTestServicePort();
+WSBindingProvider bp = (WSBindingProvider) port;
+
+SOAPFactory factory = SOAPFactory.newInstance();
+
+SOAPElement clientHeader = factory.createElement(new QName("http://x-road.eu/xsd/xroad.xsd", "client"));
+clientHeader.addNamespaceDeclaration("id", "http://x-road.eu/xsd/identifiers");
+clientHeader.addAttribute(new QName("", "objectType", "id"), "SUBSYSTEM");
+
+SOAPElement sdsbInstance = clientHeader.addChildElement("xRoadInstance", "id");
+sdsbInstance.addTextNode("FI_TEST");
+
+SOAPElement memberClass = clientHeader.addChildElement("memberClass", "id");
+memberClass.addTextNode("GOV");
+
+SOAPElement memberCode = clientHeader.addChildElement("memberCode", "id");
+memberCode.addTextNode("1234567-8");
+
+SOAPElement subsystem = clientHeader.addChildElement("subsystemCode", "id");
+subsystem.addTextNode("TestClient");
+
+// Service soap header
+SOAPElement serviceHeader = factory.createElement(new QName("http://x-road.eu/xsd/xroad.xsd", "service"));
+serviceHeader.addNamespaceDeclaration("id", "http://x-road.eu/xsd/identifiers");
+
+serviceHeader.addAttribute(new QName("", "objectType", "id"), "SERVICE");
+
+sdsbInstance = serviceHeader.addChildElement("xRoadInstance", "id");
+sdsbInstance.addTextNode("FI_TEST");
+
+memberClass = serviceHeader.addChildElement("memberClass", "id");
+memberClass.addTextNode("GOV");
+
+memberCode = serviceHeader.addChildElement("memberCode", "id");
+memberCode.addTextNode("1234567-8");
+
+subsystem = serviceHeader.addChildElement("subsystemCode", "id");
+subsystem.addTextNode("DemoService");
+
+SOAPElement serviceCode = serviceHeader.addChildElement("serviceCode", "id");
+serviceCode.addTextNode("getRandom");
+
+SOAPElement serviceVersion = serviceHeader.addChildElement("serviceVersion", "id");
+serviceVersion.addTextNode("v1");
+
+bp.setOutboundHeaders(
+  Headers.create(clientHeader),
+  Headers.create(serviceHeader),
+  Headers.create(new QName("http://x-road.eu/xsd/xroad.xsd", "id"), "ID11234"),
+  Headers.create(new QName("http://x-road.eu/xsd/xroad.xsd", "userId"), "EE1234567890"),
+  Headers.create(new QName("http://x-road.eu/xsd/xroad.xsd", "protocolVersion"), "4.0")
+);
+```
+
+
 ### wsdl2java
 Apache CXF can generate SOAP header classes, when using [exsh](http://cxf.apache.org/docs/wsdl-to-java.html) parameter. Below is an example how to use these header classes and call getRandom method on testservice.
 
@@ -45,7 +105,6 @@ Holder<String> idHeader = new Holder<String>("1");
 Holder<String> protocolVersionHeader = new Holder<String>("4.0");
 
 GetRandomResponse response = port.getRandom(getRandomMethod, clientHeader, serviceHeader, userIdHeader, idHeader, null, protocolVersionHeader);
-
 ```
 
 ### JAX-WS

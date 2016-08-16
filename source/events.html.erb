@@ -2,16 +2,7 @@
   <div class="container">
     <h1 class="center">Events</h1>
     <div class="row">
-      <% data.events.select{|event| Date.parse(event.date) >= Date.today}.each do |event| %>
-      <div class="column">
-        <div onclick="document.location.href=&quot;<%= event.link %>&quot;" class="card">
-          <div class="card-header"><b><%= Date.parse(event.date).strftime('%d.%m.%Y') %></b><small><%= event.location %></small></div>
-          <div class="card-content">
-            <p><%= event.title %></p><%= image_tag event.image %>
-          </div>
-        </div>
-      </div>
-      <% end %>
+      <%= partial "partials/events" %>
       <div class="column">
       </div>
       <div class="column">

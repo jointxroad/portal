@@ -5,7 +5,7 @@
       <p><%= blog.articles[0].title %></p><%= image_tag blog.articles[0].data.image %>
     </div>
   </div>
-  <div onclick="document.location.href = &quot;<%= data.events.select{|event| Date.parse(event.date) >= Date.today}.first.link %>&quot;" class="card">
+  <div onclick="document.location.href = &quot;<%= data.events.select{|event| Date.parse(event.date) >= Date.today}.first.try(:link) %>&quot;" class="card">
     <div class="card-header"><b><%= data.events[0].location %></b><small><%= Date.parse(data.events[0].date).strftime('%d.%m.%Y') %></small></div>
     <div class="card-content">
       <p><%= data.events[0].title %></p><%= image_tag data.events[0].image %>

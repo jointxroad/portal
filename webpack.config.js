@@ -35,12 +35,14 @@ module.exports = {
     console: true,
   },
 
+
   plugins: [
     new Clean(['.tmp']),
     new webpack.ProvidePlugin({
       $: "jquery",
       jQuery: "jquery",
-      "window.jQuery": "jquery"
+      "window.jQuery": "jquery",
+      "jdenticon": "jdenticon"
     })
   ],
 };

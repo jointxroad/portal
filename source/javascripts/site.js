@@ -1,3 +1,6 @@
+import 'script!jdenticon'
+
+
 (function(){
 
 	//TRANSFORM MENU TO FIXED WHEN SCROLLED TO IT
@@ -16,6 +19,11 @@
 	});
 
 
+	// OPEN MODULE SUBMIT FORM
+	$('.submit-module a').click(function () {
+		$('.submit-form').slideToggle();
+	});
+
 	//FADE HEADER IMAGE
 	$(window).scroll(function(){
     	$(".fader").css("opacity", 0 + $(window).scrollTop() / 500);
@@ -25,8 +33,6 @@
 	$('a[href^="#"]').click(function(e) {
 
 	    e.preventDefault();
-			console.log(this)
-			console.log(this.hash)
     	$('html,body').animate({ scrollTop: jQuery(this.hash).offset().top-50}, 700);
 	    return false;
 
@@ -37,6 +43,7 @@
 		$('.mobilenav-trigger').toggleClass('menuopen');
 		e.preventDefault();
 	});
+
 
 
 })();

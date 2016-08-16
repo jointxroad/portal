@@ -47,5 +47,20 @@
     "title": "API Days Nordic Conference 2016",
     "link": "http://nordic.apidays.io/",
     "image": "https://apidaysnordic.github.io/images/logo.png"
+  },
+  {
+    "date": "2016-06-16",
+    "location": "Helsinki, Finland",
+    "title": "Kansallisen palveluarkkitehtuurin ajankohtaisinfo",
+    "link": "http://vm.fi/kapa-info-16.6.2016",
+    "image": "http://vm.fi/ministerio-theme/images/vmlogo_fi.png"
+  },
+  {
+    "date": "2016-08-25",
+    "location": "Koplimadise Tourist Farm, Estonia",
+    "title": "Xroad community seminar2",
+    "information": "<ul><li>Different cooperation aspects between Estonia and Finland in terms of X-Road</li><li>Introduction of Personal Data Monitor – a free component on top of X-Road</li><li>Trainings and know-how materials for busines and technical level</li><li>DHX - Distributed document exchange</li><li>Monitoring ... what and how to do.</li><li>Discussions</li></ul>",
+    "link": "http://xteeseminar2016.publicon.ee/en/",
+    "image": "http://xteeseminar2016.publicon.ee/userfiles/RIA2015/Tark_e-riik_banner_uus.jpg"
   }
 ]

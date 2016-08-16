@@ -1,9 +1,6 @@
-@charset "utf-8";
-
-@import "normalize.css";
-
-@import "milligram.css";
-@import "https://fonts.googleapis.com/css?family=Work+Sans:600,400,300,200";
+@import url(normalize.css);
+@import url(milligram.css);
+@import url(https://fonts.googleapis.com/css?family=Work+Sans:600,400,300,200);
 
 $bg: #F6F4EF;
 $sun: #F5A623;
@@ -133,6 +130,9 @@ a { color: #333; }
 
 p { font-weight: 400;}
 
+p.small { font-size: 0.8em; line-height: 1.4; }
+
+
 // buttons ------------------------------------
 .button {
 	background-color: $sun;
@@ -169,6 +169,8 @@ p { font-weight: 400;}
 	.card-content {
 		img { max-width: 100%; }
 	}
+
+
 }
 
 .card-logo {
@@ -179,6 +181,89 @@ p { font-weight: 400;}
 	text-align: center;
 	min-height: 150px;
 }
+
+// Modules ----------------------------------------
+.module {
+	background: white;
+	box-shadow: 0 0 2px rgba(0,0,0, .2);
+	border-radius: 3px;
+	margin-bottom: 10px;
+	transition: transform .2s;
+	display: flex;
+
+	&:hover {
+		cursor: pointer;
+		transform: translate(3px, -3px);
+	}
+	&:active { opacity: .7; }
+}
+
+
+.module-icon {
+	width: 30%;
+	text-align: center;
+	padding: 20px;
+}
+
+.module-content{
+	width: 70%;
+	padding: 20px;
+}
+
+.module-specifics {
+	font-size: 0.8em;
+	dt,dd { float: left; }
+	dt { width: 20%; clear: both; }
+	dd { width: 70%; font-weight: bold;}
+	a { color: #2255a9;
+		&:hover { text-decoration: underline; }
+	}
+}
+
+.small-module {
+	background: white;
+	box-shadow: 0 0 2px rgba(0,0,0, .2);
+	border-radius: 3px;
+	margin-bottom: 10px;
+	transition: transform .2s;
+
+	&:hover {
+		cursor: pointer;
+		transform: translate(3px, -3px);
+	}
+	&:active { opacity: .7; }
+}
+
+.small-module-icon {
+	text-align: center;
+	padding: 10px;
+}
+
+.small-module-content {
+	padding: 10px;
+	text-align: center;
+}
+
+.module-type {
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+// Module submitting form
+.submit-module {
+	margin: 0 auto;
+	width: 400px;
+}
+
+.submit-form {
+	box-shadow: 0 0 2px rgba(0,0,0, .2);
+	border-radius: 3px;
+	padding: 20px 20px 5px 20px;
+	margin-bottom: 20px;
+	background: white;
+	display: none;
+}
+
 
 // helpers ----------------------------------------
 
@@ -193,6 +278,11 @@ p { font-weight: 400;}
 
 .nomargin {
 	margin:0 !important;
+}
+
+.backlink {
+	margin-bottom: 30px;
+	display: block;
 }
 
 // banner (front page) ----------------------------------------
