@@ -13,74 +13,22 @@
       </div>
     </div>
     <div class="row">
+    <% data.modules.each_with_index do |component, index| %>
+      <% if index % (data.modules.size / 2.to_f).round == 0 %>
       <div class="column">
-        <div onclick="document.location.href=&quot;module.html&quot;" class="module">
+      <% end %>
+        <div onclick="document.location.href=&quot;/module/<%= index %>.html&quot;" class="module">
           <div class="module-icon">
             <svg width="80" height="80" data-jdenticon-hash="6a80768be70cbf6e5688fcf11e70fb70">icon here</svg>
           </div>
-          <div class="module-content"><b>X-Road Portal MISP2</b>
-            <P>MISP2 portal can be used for consuming X-Road services both for production environments and testing of services.</P><small>RIA. (Developed by AKTORS OÜ)</small><br/><small>Java, Orbeon, PostgreSQL.</small>
+          <div class="module-content"><b><%= component.name %></b>
+            <p><%= component.description %></p><small><%= component.developer %></small><br/><small><%= component.technology %></small>
           </div>
         </div>
-        <div onclick="document.location.href=&quot;module.html&quot;" class="module">
-          <div class="module-icon">
-            <svg width="80" height="80" data-jdenticon-hash="cc3cf2ccefc4146f7b8166ba2a1cc2c2">icon here</svg>
-          </div>
-          <div class="module-content"><b>X-Road WSDL validator</b>
-            <P>WSDL validator can be used by developers to validate X-Road service WSDL. Validator is also used by Security Server to validate service WSDL.</P><small>RIA.</small><br/><small>Java, Apache CXF.</small>
-          </div>
-        </div>
-        <div onclick="document.location.href=&quot;module.html&quot;" class="module">
-          <div class="module-icon">
-            <svg width="80" height="80" data-jdenticon-hash="fdb7bd4185174e8b109b67914b33e55e">icon here</svg>
-          </div>
-          <div class="module-content"><b>X-Road Personal Data Monitor</b>
-            <P>MISP2 portal can be used for consuming X-Road services both for production environments and testing of services.</P><small>RIA. (Developed by AKTORS OÜ)</small><br/><small>Java, Orbeon, PostgreSQL.</small>
-          </div>
-        </div>
-        <div onclick="document.location.href=&quot;module.html&quot;" class="module">
-          <div class="module-icon">
-            <svg width="80" height="80" data-jdenticon-hash="794a9068358a07f655fa29aab455353a">icon here</svg>
-          </div>
-          <div class="module-content"><b>X-Road Generator (X-Road .NET)</b>
-            <P>WSDL validator can be used by developers to validate X-Road service WSDL. Validator is also used by Security Server to validate service WSDL.</P><small>RIA.</small><br/><small>Java, Apache CXF.</small>
-          </div>
-        </div>
+      <% if index == (data.modules.size / 2.to_f).round - 1 || index == data.modules.size %>
       </div>
-      <div class="column">
-        <div onclick="document.location.href=&quot;module.html&quot;" class="module">
-          <div class="module-icon">
-            <svg width="80" height="80" data-jdenticon-hash="159c71e09e15593a7ac748c14c9201cb">icon here</svg>
-          </div>
-          <div class="module-content"><b>J-road</b>
-            <P>MISP2 portal can be used for consuming X-Road services both for production environments and testing of services.</P><small>RIA. (Developed by AKTORS OÜ)</small><br/><small>Java, Orbeon, PostgreSQL.</small>
-          </div>
-        </div>
-        <div onclick="document.location.href=&quot;module.html&quot;" class="module">
-          <div class="module-icon">
-            <svg width="80" height="80" data-jdenticon-hash="405b6c19640921886036ddcc4f3e678c">icon here</svg>
-          </div>
-          <div class="module-content"><b>REST-Gateway</b>
-            <P>WSDL validator can be used by developers to validate X-Road service WSDL. Validator is also used by Security Server to validate service WSDL.</P><small>RIA.</small><br/><small>Java, Apache CXF.</small>
-          </div>
-        </div>
-        <div onclick="document.location.href=&quot;module.html&quot;" class="module">
-          <div class="module-icon">
-            <svg width="80" height="80" data-jdenticon-hash="605552db4b1171cb9e67f38a51ce75c0">icon here</svg>
-          </div>
-          <div class="module-content"><b>XRd4J</b>
-            <P>MISP2 portal can be used for consuming X-Road services both for production environments and testing of services.</P><small>RIA. (Developed by AKTORS OÜ)</small><br/><small>Java, Orbeon, PostgreSQL.</small>
-          </div>
-        </div>
-        <div onclick="document.location.href=&quot;module.html&quot;" class="module">
-          <div class="module-icon">
-            <svg width="80" height="80" data-jdenticon-hash="7d0c81710715e83f1cc428cbe5579f05">icon here</svg>
-          </div>
-          <div class="module-content"><b>SAP PI X-Road Adapter</b>
-            <P>WSDL validator can be used by developers to validate X-Road service WSDL. Validator is also used by Security Server to validate service WSDL.</P><small>RIA.</small><br/><small>Java, Apache CXF.</small>
-          </div>
-        </div>
-      </div>
-    </div>
+      <% end %>
+    <% end %>
+    </div> <!-- end row -->
   </div>
 </main>
